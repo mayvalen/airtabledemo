@@ -1,7 +1,8 @@
-console.log("airtable demo");
+console.log("airtable demo"); //log to make sure java is working
 
+//load the airtable library, call it airtable
 var Airtable = require('airtable');
-console.log(Airtable);
+console.log(Airtable);  //log it
 
 //connect to our base using API key 
 var base = new Airtable({apiKey: 'keyO9wq4XLHM7yf9d'}).base('appiyGh8osnYsieKq');
@@ -21,7 +22,7 @@ var musics = [];
 // callback function that receives our data
 function gotPageOfMusics(records, fetchNextPage) {
     console.log("gotPageOfMusics()");
-    // add the records from this page to our rocks array
+    // add the records from this page to our music array
     musics.push(...records);
     // request more pages
     fetchNextPage();
@@ -43,7 +44,7 @@ function gotAllMusics(err) {
 }
 
 
-// just loop through the books and console.log them
+// just loop through the music and console.log them
 function consoleLogMusics() {
     console.log("consoleLogMusics()");
     musics.forEach(music => {
